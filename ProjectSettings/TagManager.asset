@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Walls
+  - Water
+  - UI
+  - Floor
+  - Props
+  - PlayerBody
+  - Confiner
+  - Items
+  - PlayerHitbox
+  - NPC
+  - DJLight
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 884091005
+    locked: 0
+  - name: DownProps
+    uniqueID: 640086009
+    locked: 0
+  - name: Character
+    uniqueID: 724713239
+    locked: 0
+  - name: UpProps
+    uniqueID: 1521720685
+    locked: 0
+  m_RenderingLayers:
+  - Default
