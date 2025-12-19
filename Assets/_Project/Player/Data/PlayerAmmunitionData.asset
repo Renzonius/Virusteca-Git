@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2cc158f43dda045ae02475887d3090, type: 3}
   m_Name: PlayerAmmunitionData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAmmunitionSO
+  projectile: {fileID: 3908879737830219657, guid: 3e2a6f8dc5683a84f93c0b3c433be7eb, type: 3}
+  initialAmmunition: 12

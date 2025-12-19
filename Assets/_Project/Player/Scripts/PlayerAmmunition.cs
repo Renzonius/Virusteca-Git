@@ -15,21 +15,22 @@ public class PlayerAmmunition: MonoBehaviour, ICumulative
     }
     private void InitializedAmmunitionData()
     {
-        //maxAmmunition = GameManager.Instance.playerAmmunitionSO.maxAmmunition;
-        //ammunition = GameManager.Instance.playerAmmunitionSO.currentAmmunition;
+        maxAmmunition = GameManager.Instance.playerAmmunitionData.initialAmmunition;
+        ammunition = maxAmmunition;
     }
+    public bool HasAmmo()
+    {
+        return ammunition > 0;
+    }
+
     public void AddAmmo(int Amount)
     {
         ammunition = Mathf.Clamp(ammunition + Amount, 0, maxAmmunition);
-        //GameManager.Instance.playerAmmunitionSO.currentAmmunition = ammunition;
-
-        //UIEvents.AmmoRestoreUI();
+        PlayerEvents.OnPlayerAmmoChanged?.Invoke(ammunition);
     }
     public void RemoveAmmo(int Amount)
     {
         ammunition = Mathf.Clamp(ammunition - Amount, 0, maxAmmunition);
-        //GameManager.Instance.playerAmmunitionSO.currentAmmunition = ammunition;
-
-        //UIEvents.AmmoReductionUI();
+        PlayerEvents.OnPlayerAmmoChanged?.Invoke(ammunition);
     }
 }
