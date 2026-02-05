@@ -13,6 +13,6 @@ public static class PlayerEvents
     public static void PlayerAmmoChanged(int currentAmmo) 
         => OnPlayerAmmoChanged?.Invoke(currentAmmo);
 
-    public static void PlayerDeath() 
-        => OnPlayerDeath?.Invoke();
+    //public static void PlayerDeath() 
+    //    => OnPlayerDeath?.Invoke();
 }

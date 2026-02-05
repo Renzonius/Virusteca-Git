@@ -5,8 +5,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 {
     private int maxHealth;
     private float invincibilityDuration;
+    private int health;
     [SerializeField] private bool isInvincible;
-    [SerializeField] private int health;
 
     private void Start()
     {
@@ -21,7 +21,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     }
     private void CheckPlayerDeath()
     {
-        if (health <= 0) PlayerEvents.PlayerDeath();
+        if (health <= 0) GameManager.Instance.ChangeState(GameState.PlayerInfected);
+
     }
 
     private IEnumerator InvincibilityCoroutine()

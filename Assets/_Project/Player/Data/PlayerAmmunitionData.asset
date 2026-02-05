@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: PlayerAmmunitionData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAmmunitionSO
   projectile: {fileID: 3908879737830219657, guid: 3e2a6f8dc5683a84f93c0b3c433be7eb, type: 3}
-  initialAmmunition: 12
+  maxAmmunition: 12
+  initialAmmunition: 0

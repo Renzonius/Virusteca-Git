@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   playerHealthData: {fileID: 11400000, guid: 1cbc21ee94bc6184c9d4ed7f52437e69, type: 2}
-  playerAmmunitionData: {fileID: 11400000, guid: e46ac50156ff2b744a0e631f5bb3d54a, type: 2}
+  playerAmmunitionData: {fileID: 11400000, guid: b21030891f9876d4ebb92cf9b4b47817, type: 2}

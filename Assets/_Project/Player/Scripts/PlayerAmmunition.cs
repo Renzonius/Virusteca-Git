@@ -6,8 +6,7 @@ using UnityEngine.Events;
 public class PlayerAmmunition: MonoBehaviour, ICumulative
 {
     private int maxAmmunition;
-    private int ammunition;
-
+    [SerializeField] private int ammunition;
 
     private void Start()
     {
@@ -15,8 +14,8 @@ public class PlayerAmmunition: MonoBehaviour, ICumulative
     }
     private void InitializedAmmunitionData()
     {
-        maxAmmunition = GameManager.Instance.playerAmmunitionData.initialAmmunition;
-        ammunition = maxAmmunition;
+        maxAmmunition = GameManager.Instance.playerAmmunitionData.maxAmmunition;
+        ammunition = GameManager.Instance.playerAmmunitionData.initialAmmunition;
     }
     public bool HasAmmo()
     {
