@@ -16,7 +16,7 @@ public class SpotManager : MonoBehaviour
     {
         List<Spot> freeSpots = spots.FindAll(spot => spot.occupant == null);
 
-        if (freeSpots.Count == 0) 
+        if (freeSpots.Count == 0)
             return null;
 
         Spot chosen = freeSpots[Random.Range(0, freeSpots.Count)];

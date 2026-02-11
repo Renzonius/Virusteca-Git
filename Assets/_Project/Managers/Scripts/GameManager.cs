@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public PlayerAmmunitionSO playerAmmunitionData;
     public event Action OnPlayerLose;
 
+    [Header("UI DATA")]
+    public VirusSliderSO virusSliderData;
+    public RageSliderSO rageSliderData;
     public static GameManager Instance { get; private set; }
 
     private void Awake()

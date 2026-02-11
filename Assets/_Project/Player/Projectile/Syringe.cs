@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Syringe : MonoBehaviour
 {
-    public float healAmount; //50 es un buen valor.
+    public int healAmount; //50 es un buen valor.
 }
