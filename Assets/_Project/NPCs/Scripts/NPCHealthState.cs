@@ -5,10 +5,10 @@ public enum NPCHealthStatus { Healthy, Sick, Inmune }
 public class NPCHealthState : MonoBehaviour
 {
     public NPCHealthStatus currentHealthStatus = NPCHealthStatus.Healthy;
-    [SerializeField] private int maxHealth = 100;
-    [SerializeField] private int health = 100; //Si quiero enfermarlo, bajo este valor a 0.
     [SerializeField] private float rageAmount = 27; // 27 buen valor.
     [SerializeField] private float virusAmount = 1; // 1 buen valor.
+    private int maxHealth = 100;
+    private int health = 100; //Si quiero enfermarlo, bajo este valor a 0.
 
     [Header("COLOR SETTINGS")]
     [SerializeField]private SpriteRenderer spriteRenderer;
@@ -16,9 +16,14 @@ public class NPCHealthState : MonoBehaviour
     private Color sickColor = Color.green;
     private Color rageColor = Color.red;
 
-    private void Start()
-    {
-    }
+    //private void Start()
+    //{
+    //    Invoke("Sick", Random.Range(7f, 20f));
+    //}
+    //private void Sick()
+    //{
+    //    health = 0;
+    //}
 
     private void OnTriggerEnter2D(Collider2D tri)
     {

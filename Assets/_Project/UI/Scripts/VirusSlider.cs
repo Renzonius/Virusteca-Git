@@ -20,6 +20,7 @@ public class VirusSlider : MonoBehaviour
     private void InitializedVirusData()
     {
         maxVirusValue = GameManager.Instance.virusSliderData.maxVirusLevel;
+        slider.maxValue = maxVirusValue;
         currentVirusValue = GameManager.Instance.virusSliderData.currentVirusLevel;
     }
 
@@ -27,6 +28,7 @@ public class VirusSlider : MonoBehaviour
     {
         currentVirusValue = Mathf.Clamp(currentVirusValue + currentVirus, 0, maxVirusValue);
         slider.value = currentVirusValue;
-        Debug.Log(" Virus Slider Updated: " + currentVirusValue);
+        if (currentVirusValue >= maxVirusValue)
+            GameEvents.VirusOutOfControl();
     }
 }

@@ -4,25 +4,24 @@ public enum NPCState { Idle, Moving }
 
 public class NPCMovementState : MonoBehaviour
 {
+    [Header("GENERAL SETTINGS")]
+    public NPCState currentState = NPCState.Idle;
+    [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private Animator animator;
+    private float animationSpeed = 1f;
+
     [Header("IDLE SETTINGS")]
     [SerializeField] private float idleTimeMin = 1.5f;
     [SerializeField] private float idleTimeMax = 4.0f;
-    [SerializeField] private float idleTimer;
+    private float idleTimer;
 
     [Header("MOVING SETTINGS")]
-    [SerializeField] private Spot currentSpot;
-    [SerializeField] private Spot oldSpot;
     [SerializeField] private float moveSpeedMin = 0.5f;
     [SerializeField] private float moveSpeedMax = 2f;
-    [SerializeField] float rotationSpeed = 720f; // grados por segundo
+    private Spot currentSpot;
+    private Spot oldSpot;
+    private float rotationSpeed = 720f; // grados por segundo
 
-    [Header("GENERAL SETTINGS")]
-    [SerializeField] private NavMeshAgent agent;
-    public NPCState currentState = NPCState.Idle;
-
-    [Header("ANIMATION SETTINGS")]
-    [SerializeField] private Animator animator;
-    private float animationSpeed = 1f;
     private void Start()
     {
         // IMPORTANTE para top-down 2D

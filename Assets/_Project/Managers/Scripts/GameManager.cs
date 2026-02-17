@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     [Header("PLAYER DATA")]
     public PlayerHealthSO playerHealthData;
     public PlayerAmmunitionSO playerAmmunitionData;
-    public event Action OnPlayerLose;
 
     [Header("UI DATA")]
     public VirusSliderSO virusSliderData;
@@ -29,6 +28,17 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        GameEvents.OnVirusOutOfControl += () => ChangeState(GameState.UncontrolledVirus);
+        GameEvents.OnRageOutOfControl += () => ChangeState(GameState.RagedPeople);
+    }
+    private void OnDisable()
+    {
+        GameEvents.OnVirusOutOfControl -= () => ChangeState(GameState.UncontrolledVirus);
+        GameEvents.OnRageOutOfControl -= () => ChangeState(GameState.RagedPeople);
     }
 
     public void ChangeState(GameState newState)
@@ -50,15 +60,15 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 0f;
                 break;
             case GameState.RagedPeople:
-                OnPlayerLose?.Invoke();
+                GameEvents.PlayerLose();
                 Time.timeScale = 0f;
                 break;
             case GameState.PlayerInfected:
-                OnPlayerLose?.Invoke();
+                GameEvents.PlayerLose();
                 Time.timeScale = 0f;
                 break;
             case GameState.UncontrolledVirus:
-                OnPlayerLose?.Invoke();
+                GameEvents.PlayerLose();
                 Time.timeScale = 0f;
                 break;
         }

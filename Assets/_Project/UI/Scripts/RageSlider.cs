@@ -27,8 +27,11 @@ public class RageSlider : MonoBehaviour
     {
         currentRageValue = Mathf.Clamp(currentRageValue + currentRage, 0, maxRageValue);
         slider.value = currentRageValue;
-        
-        if(rageDownCoroutine != null) 
+
+        if (currentRageValue >= maxRageValue)
+            GameEvents.RageOutOfControl();
+
+        if (rageDownCoroutine != null) 
             StopCoroutine(rageDownCoroutine);
 
         rageDownCoroutine = StartCoroutine(RageDownCoroutine());
